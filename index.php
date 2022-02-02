@@ -33,7 +33,10 @@ $posts = [
 //     $post->published = true;
 // }
 
-$modifiedArr = array_map(function($post){
-    return ['title' => $post->title];
-}, $posts);
-var_dump($modifiedArr);
+// $modifiedArr = array_map(function($post){
+//     return ['title' => $post->title];
+// }, $posts);
+
+$titles = array_column($posts, 'title');
+
+var_dump($titles);
