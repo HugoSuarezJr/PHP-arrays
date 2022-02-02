@@ -24,12 +24,16 @@ $posts = [
 //     return !$post->published;
 // });
 
-$modifiedArr = array_map(function($post){
-    $post->published = true;
-    return $post;
-}, $posts);
+// $modifiedArr = array_map(function($post){
+//     $post->published = true;
+//     return $post;
+// }, $posts);
 
-foreach ($posts as $post){
-    $post->published = true;
-}
-var_dump($posts);
+// foreach ($posts as $post){
+//     $post->published = true;
+// }
+
+$modifiedArr = array_map(function($post){
+    return ['title' => $post->title];
+}, $posts);
+var_dump($modifiedArr);
