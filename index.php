@@ -20,7 +20,16 @@ $posts = [
 
 ];
 
-$unpublishedPosts = array_filter($posts, function ($post){
-    return !$post->published;
-});
-var_dump($unpublishedPosts);
+// $unpublishedPosts = array_filter($posts, function ($post){
+//     return !$post->published;
+// });
+
+$modifiedArr = array_map(function($post){
+    $post->published = true;
+    return $post;
+}, $posts);
+
+foreach ($posts as $post){
+    $post->published = true;
+}
+var_dump($posts);
